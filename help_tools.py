@@ -118,10 +118,10 @@ def read_pedestals(indir_prefix = "./pedestals/"):
                 items = [float(item) for item in line.split()]
 
                 chip,chan = int(items[0]),int(items[1])
-                peds = items[2::2]
-                peds_err = items[3::2]
+                peds = items[2]
+                peds_err = items[3]
+                peds_width = items[4]
                 pedestal_map[slab][chip][chan] = peds
-
     ped_map = pedestal_map
     return pedestal_map
 
